@@ -1,0 +1,28 @@
+<div class="col-md-10">
+<div class="card student-card">
+  <div class="card-body">
+    <h5 class="card-title">{{student.firstName}} {{student.lastname}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">email: {{student.email}}</h6>
+    <h5 class="card-title" *ngIf="condition">Subjects</h5>
+    <table class="table table-striped" *ngIf="condition">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subject of subjects; let i = index">
+          <td>{{subject.name}}</td>
+          <td>{{subject.code}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="deactivateStudent()" class="btn btn-danger">Deactivate</button>
+    <button class="btn btn-info back-button"><a routerLink="/students" class="card-link a-back">Back</a></button>
+    <button class="btn btn-info back-button"><a routerLink="/add-subject-to-student/{{student.id}}" class="card-link a-back">Add Subject</a></button>
+    
+  </div>
+  
+</div>
+</div>

@@ -1,0 +1,35 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="subject.name"
+          name="subjectName"
+          value={{subject.name}}
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Code</label>
+        <input
+          class="form-control"
+          id="code"
+          required
+          [(ngModel)]="subject.code"
+          name="subjectCode"
+        />
+      </div>
+      <button (click)="updateSubject()" class="btn btn-success">Submit</button>
+      <button class="btn btn-info back-button"><a routerLink="/subjects" class="card-link a-back">Back</a></button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Subject was updated successfully!</h4>
+    </div>
+  </div>
+</div>

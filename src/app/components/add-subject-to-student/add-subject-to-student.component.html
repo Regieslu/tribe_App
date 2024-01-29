@@ -1,0 +1,16 @@
+<div class="list row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Select a subject</h5>
+        <select (change)="selectOption($event)" class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option [value]="subject.id" *ngFor="let subject of subjects; let i = index" value="1">{{subject.name}}</option>
+        </select>
+      </div>
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button (click)="saveSubject()" button class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
